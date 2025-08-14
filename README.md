@@ -13,7 +13,7 @@ This table is for beginner learners. First I am going to create simple table and
 
 After getting row data from ChatGPT, go to [SQL Lite Online](https://sqliteonline.com/), first add the **Table** and click the run button, then add **Values** and click the run. 
 
-As shown image, there should not be any Syntax error (in the right you can see SYNTAX & History section)
+As shown image, there should not be any error (in the right you can see SYNTAX & History section)
 
 <img width="1655" height="631" alt="image" src="https://github.com/user-attachments/assets/b64c27f3-21a8-4e30-a55a-a92476842e81" />
 
