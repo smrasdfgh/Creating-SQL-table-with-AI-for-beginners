@@ -1,0 +1,93 @@
+1. Show all customers and their accounts.
+2. Find customers without a phone number.
+3. List accounts with active status and type "savings."
+4. Show the number of posted transactions by channel in March 2024.
+5. Calculate the total debit and credit amounts for each account.
+6. Show how many accounts there are per branch_code.
+7. Find the top 5 accounts with the highest balance.
+8. Show the most recent posted transaction for each account.
+9. Retrieve customer information for savings accounts in USD and EUR currencies.
+10. Find accounts with no transactions.
+11. Show the daily transaction amounts for POS channel in March.
+12. Show how many accounts customers have by gender.
+13. Show the count and total amount of reversed transactions by channel.
+14. Show the count and total amount of pending transactions for each account in March.
+15. Find active accounts of customers whose names contain "an."
+
+1. Show all customers and their accounts.
+- mine:
+SELECT customer_name, customer_surname, account_id, account_number, account_type, currency, status
+FROM customer_info
+JOIN bank_account ON bank_account.customer_id = customer_info.customer_id
+ORDER BY customer_info.customer_id, bank_account.account_id;
+
+--ChatGPT:
+SELECT
+  c.customer_name,
+  c.customer_surname,
+  a.account_id,
+  a.account_number,
+  a.account_type,
+  a.currency,
+  a.status
+FROM customer_info AS c
+JOIN bank_account AS a
+  ON a.customer_id = c.customer_id
+ORDER BY c.customer_id, a.account_id;
+
+2. Find customers without a phone number.
+- mine:
+SELECT customer_name, customer_surname from customer_info
+where phone_number = 'null';
+
+--ChatGPT:
+SELECT customer_name, customer_surname
+FROM customer_info
+WHERE phone_number IS NULL OR TRIM(phone_number) = '';
+
+3. List accounts with active status and type "savings."
+- mine:
+select customer_name, customer_surname, account_type, status from bank_account
+JOIN customer_info on bank_account.customer_id = customer_info.customer_id
+where account_type='savings' and status='active'
+order by customer_name, customer_surname;
+
+--ChatGPT:
+SELECT
+  c.customer_name,
+  c.customer_surname,
+  a.account_type,
+  a.status
+FROM bank_account AS a
+JOIN customer_info AS c
+  ON a.customer_id = c.customer_id
+WHERE a.account_type = 'savings'
+  AND a.status = 'active'
+ORDER BY c.customer_surname, c.customer_name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
