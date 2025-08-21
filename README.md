@@ -43,9 +43,13 @@ After getting row data from ChatGPT, go to SQL Lite Online and add both table sc
 And here you are, you have data for practice. 
 
 2. Next I will ask Chatgpt to give me tasks easy to hard and I will try to solve myself, then ask ChatGPT again whether it is correct or not.
+We send the tables we created along with their values to ChatGPT and then write this prompt:
+- "Based on these tables, give me 15 easy questions, but don’t send the answers or hints. I will write the scripts and send them to you one by one, and you will check them and give me feedback."
+- "Now give me 15 medium level questions and again don’t send the answers or hints. I will write the scripts and send them to you one by one, and you will check them and give me feedback."
+- "Now I need you to give me 15 hard level questions"
+- 
 
-
-
+3. Go to sqliteonline.com and solve these questions one-by-one and for each questions send the script to ChatGPT to give you feedback if it is true or not.
 
 
 
